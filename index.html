@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GiftCustom Studio | Create Special Moments</title>
-    <!-- Import a friendly Google Font -->
+    <!-- Import friendly Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Modern Beginner Styling */
+        /* Modern Beginner-Plus Styling */
         :root {
             --primary: #ff8a71; /* Soft Coral */
             --secondary: #64d8cb; /* Minty Teal */
@@ -84,29 +84,30 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #fff2ef 0%, #fffbf0 100%);
-            padding: 5rem 1rem;
+            padding: 6rem 1rem;
             text-align: center;
             border-radius: 0 0 50px 50px;
             margin-bottom: 3rem;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
             color: var(--dark);
+            line-height: 1.1;
         }
 
         .hero p {
             font-size: 1.2rem;
             color: #666;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
         }
 
         .cta-button {
             background: var(--primary);
             color: white;
-            padding: 0.8rem 2rem;
+            padding: 1rem 2.5rem;
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
@@ -114,6 +115,9 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(255, 138, 113, 0.3);
             transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .cta-button:hover {
@@ -139,84 +143,107 @@
 
         .card {
             background: var(--white);
-            border-radius: 20px;
+            border-radius: 25px;
             padding: 1.5rem;
             text-align: center;
             transition: var(--transition);
-            border: 1px solid #eee;
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
         }
 
         .card img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 1rem;
+            border-radius: 20px;
+            margin-bottom: 1.2rem;
         }
 
         .card h3 {
             margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
 
         .card .price {
             color: var(--primary);
             font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
         }
 
         .card button {
-            width: 100%;
-            padding: 0.7rem;
+            flex: 1;
+            padding: 0.8rem;
             border: none;
-            border-radius: 12px;
+            border-radius: 15px;
             background: var(--secondary);
             color: white;
             font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .card button.secondary-btn {
+            background: #f5f5f5;
+            color: var(--dark);
         }
 
         .card button:hover {
             background: #52c1b6;
         }
 
+        .card button.secondary-btn:hover {
+            background: #e0e0e0;
+        }
+
         /* Customization Area */
         .custom-section {
             background: var(--white);
-            border-radius: 30px;
-            padding: 3rem;
+            border-radius: 35px;
+            padding: 3.5rem;
             margin-top: 2rem;
             box-shadow: var(--shadow);
+            border: 1px solid #f5f5f5;
         }
 
         .custom-layout {
             display: flex;
             flex-wrap: wrap;
-            gap: 3rem;
+            gap: 4rem;
             align-items: flex-start;
         }
 
         .preview-pane {
-            flex: 1;
-            min-width: 300px;
+            flex: 1.2;
+            min-width: 320px;
             position: relative;
-            background: #f9f9f9;
-            border-radius: 20px;
-            padding: 1rem;
+            background: #fafafa;
+            border-radius: 25px;
+            padding: 1.5rem;
             text-align: center;
+            border: 2px dashed #eee;
         }
 
         .preview-pane img {
             max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
         .live-text {
@@ -225,13 +252,14 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 80%;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 700;
             color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            text-shadow: 0 3px 15px rgba(0,0,0,0.5);
             pointer-events: none;
             word-wrap: break-word;
             text-align: center;
+            line-height: 1.2;
         }
 
         .editor-pane {
@@ -240,44 +268,49 @@
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #555;
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+            color: #444;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #eee;
-            border-radius: 12px;
+            padding: 1rem;
+            border: 2px solid #f0f0f0;
+            border-radius: 15px;
             font-family: inherit;
             font-size: 1rem;
             transition: var(--transition);
+            background: #fff;
         }
 
         .form-group input:focus {
             border-color: var(--primary);
             outline: none;
+            box-shadow: 0 0 0 4px rgba(255, 138, 113, 0.1);
         }
 
         .color-options {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             margin-top: 10px;
         }
 
         .color-dot {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             cursor: pointer;
-            border: 3px solid white;
-            box-shadow: 0 0 0 2px #eee;
+            border: 4px solid white;
+            box-shadow: 0 0 0 1px #eee;
             transition: var(--transition);
         }
 
@@ -291,43 +324,66 @@
 
         /* Footer */
         footer {
-            margin-top: 5rem;
-            padding: 4rem 1rem;
+            margin-top: 6rem;
+            padding: 5rem 1rem;
             background: var(--dark);
             color: white;
             text-align: center;
-            border-radius: 50px 50px 0 0;
+            border-radius: 60px 60px 0 0;
         }
 
         .footer-content p {
-            opacity: 0.7;
-            font-size: 0.9rem;
+            opacity: 0.6;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .custom-layout { flex-direction: column; }
-            .custom-section { padding: 1.5rem; }
-            .nav-container { flex-direction: column; gap: 1rem; }
-            nav a { margin: 0 0.5rem; }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 2rem 0;
         }
 
-        /* Simple Animations */
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.6;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-fade {
-            animation: fadeIn 0.8s ease forwards;
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .custom-layout { flex-direction: column; }
+            .custom-section { padding: 2rem 1.5rem; }
+            .nav-container { flex-direction: column; gap: 1.5rem; }
+            nav a { margin: 0 0.8rem; }
         }
     </style>
-<script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/"
+    "react-dom": "https://esm.sh/react-dom@^19.2.4",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.4/client",
+    "lucide-react": "https://esm.sh/lucide-react@^0.475.0",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
   }
 }
 </script>
