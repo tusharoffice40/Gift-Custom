@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiftCustom Studio | Create Special Moments</title>
+    <!-- Import a friendly Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Modern Beginner Styling */
+        :root {
+            --primary: #ff8a71; /* Soft Coral */
+            --secondary: #64d8cb; /* Minty Teal */
+            --accent: #ffcb74; /* Warm Yellow */
+            --dark: #333d42;
+            --light: #fef9f8;
+            --white: #ffffff;
+            --shadow: 0 8px 30px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Nav Bar */
+        header {
+            background: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            margin-left: 1.5rem;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff2ef 0%, #fffbf0 100%);
+            padding: 5rem 1rem;
+            text-align: center;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 138, 113, 0.3);
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 138, 113, 0.4);
+            background: #ff755b;
+        }
+
+        /* Main Content Container */
+        .main-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Product Cards */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .card .price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card button {
+            width: 100%;
+            padding: 0.7rem;
+            border: none;
+            border-radius: 12px;
+            background: var(--secondary);
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .card button:hover {
+            background: #52c1b6;
+        }
+
+        /* Customization Area */
+        .custom-section {
+            background: var(--white);
+            border-radius: 30px;
+            padding: 3rem;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .custom-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .preview-pane {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            background: #f9f9f9;
+            border-radius: 20px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .preview-pane img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .live-text {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            pointer-events: none;
+            word-wrap: break-word;
+            text-align: center;
+        }
+
+        .editor-pane {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+
+        .color-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .color-dot {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #eee;
+            transition: var(--transition);
+        }
+
+        .color-dot:hover {
+            transform: scale(1.2);
+        }
+
+        .color-dot.active {
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            padding: 4rem 1rem;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            border-radius: 50px 50px 0 0;
+        }
+
+        .footer-content p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .custom-layout { flex-direction: column; }
+            .custom-section { padding: 1.5rem; }
+            .nav-container { flex-direction: column; gap: 1rem; }
+            nav a { margin: 0 0.5rem; }
+        }
+
+        /* Simple Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade {
+            animation: fadeIn 0.8s ease forwards;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
